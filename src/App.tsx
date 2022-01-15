@@ -3,14 +3,15 @@ import './App.css';
 import useData from './useData';
 
 function App() {
-  const { data, loading } = useData<Comment[]>(
-    'https://jsonplaceholder.typicode.com/posts/1/comments'
+  const { data, loading, error } = useData<Comment[]>(
+    'https://jsonplaceholder.typicode.com/posts/1/comments/'
   );
 
   return (
     <div className="App">
       <header className="App-header">
         {loading && <div>loading...</div>}
+        {error && <pre>{error}</pre>}
         {data &&
           data.map((comment) => {
             return (
