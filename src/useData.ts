@@ -10,8 +10,8 @@ export default function useLoadData<T>(url: string) {
       try {
         setLoading(true);
         const response = await fetch(url);
-        const data = await response.json();
-        setData(data);
+        const json = await response.json();
+        setData(json);
         setLoading(false);
       } catch (e: any) {
         setLoading(false);
@@ -24,7 +24,7 @@ export default function useLoadData<T>(url: string) {
     } else {
       setError('Data url not specified');
     }
-  }, [data, url]);
+  }, [url]);
 
   return { data, loading, error };
 }
