@@ -10,7 +10,7 @@ export default function useLoadData<T>(url: string) {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
+        //console.log(data);
         setData(data);
         setLoading(false);
       } catch (e: any) {
