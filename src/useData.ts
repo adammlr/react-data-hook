@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function useLoadComments<T>(url: string) {
+export default function useLoadData<T>(url: string) {
   const [data, setData] = useState<T>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>();
