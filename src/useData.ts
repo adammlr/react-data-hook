@@ -12,10 +12,10 @@ export default function useLoadData<T>(url: string) {
         const response = await fetch(url);
         const json = await response.json();
         setData(json);
-        setLoading(false);
       } catch (e: any) {
-        setLoading(false);
         setError(e.message);
+      } finally {
+        setLoading(false);
       }
     }
 
